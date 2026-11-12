@@ -1,0 +1,7 @@
+.DS_Store
+.playwright-mcp/
+/meeting_transcript.txt
+/design-source.txt
+/reference-design.txt
+/page.tsx
+/assets/fleet-shipping-routes.mp4
