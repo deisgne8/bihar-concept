@@ -1277,6 +1277,22 @@ body { font-size: 16px; }
   mask-image: none;
   z-index: -2;
 }
+/* Keep the face lightly tinted while softening the surrounding photo. */
+[data-node-id="0:901"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 24%);
+  mask-image: linear-gradient(to bottom, transparent, #000 24%);
+  background: radial-gradient(
+    ellipse 32% 38% at 55% 30%,
+    #0118310d 0%,
+    #0118311a 45%,
+    #0118314d 80%,
+    #01183166 100%
+  );
+}
 [data-node-id="0:901"] img {
   inset: 0;
   width: 100%;
@@ -1290,8 +1306,8 @@ body { font-size: 16px; }
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(to bottom, var(--contact-navy) 2%, #0c1b4580 20%, transparent 42%, transparent 58%, var(--footer-seam) 98%),
-    linear-gradient(to right, #0c1b4520, #0c1b4575 29%, var(--contact-navy) 59%);
+    linear-gradient(to bottom, transparent 76%, var(--footer-seam) 100%),
+    linear-gradient(to right, transparent 40%, var(--contact-navy) 62%);
 }
 [data-node-id="0:903"] { margin-left: 45.5%; gap: 34px; }
 [data-node-id="0:907"] { font-size: clamp(32px, 3.1vw, 60px); font-weight: 200; }
@@ -1306,7 +1322,7 @@ body { font-size: 16px; }
 @media (max-width: 700px) {
   [data-node-id="0:899"] { align-items: end; padding-top: 250px; }
   [data-node-id="0:899"] > [data-node-id="0:901"] { width: 100%; height: 70%; }
-  [data-node-id="0:899"]::before { background: linear-gradient(to bottom, var(--contact-navy), #0c1b4540 26%, #0c1b4575 42%, var(--contact-navy) 65%, var(--footer-seam) 98%); }
+  [data-node-id="0:899"]::before { background: linear-gradient(to bottom, transparent 48%, var(--contact-navy) 70%, var(--footer-seam) 100%); }
   [data-node-id="0:903"] { margin-left: 0; gap: 24px; }
 }
 
@@ -1325,7 +1341,14 @@ body { font-size: 16px; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(#011831 2%, #101e4bdc 34%, #101e4bde 85%, #011831);
+  background: linear-gradient(
+    to bottom,
+    #011831 0,
+    #011831 calc(var(--footer-top-space) + 152px),
+    #011831ed 68%,
+    #011831dc 86%,
+    #011831f2 100%
+  );
 }
 @media (prefers-reduced-motion: reduce) { .footer-video { display: none; } }
 
@@ -1336,7 +1359,8 @@ body { font-size: 16px; }
 /* Footer rows share the same gutters and align independently. */
 #canvas .site-footer {
   gap: 0;
-  padding: var(--section-space) var(--gutter) 28px;
+  --footer-top-space: calc(var(--section-space) + clamp(64px, 5vw, 96px));
+  padding: var(--footer-top-space) var(--gutter) 28px;
   color: #fff;
 }
 .footer-masthead,
@@ -1633,12 +1657,12 @@ body { font-size: 16px; }
 }
 .scroll-background [data-node-id="0:899"]::before {
   background:
-    linear-gradient(to bottom, var(--scroll-background), transparent 42%, transparent 58%, var(--footer-seam) 98%),
-    linear-gradient(to right, transparent, var(--scroll-background) 59%);
+    linear-gradient(to bottom, transparent 76%, var(--footer-seam) 100%),
+    linear-gradient(to right, transparent 40%, var(--scroll-background) 62%);
 }
 @media (max-width: 700px) {
   .scroll-background [data-node-id="0:899"]::before {
-    background: linear-gradient(to bottom, var(--scroll-background), transparent 30%, var(--scroll-background) 63%, var(--footer-seam) 98%);
+    background: linear-gradient(to bottom, transparent 48%, var(--scroll-background) 70%, var(--footer-seam) 100%);
   }
 }
 
