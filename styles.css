@@ -1272,7 +1272,8 @@ body { font-size: 16px; }
   background: linear-gradient(var(--contact-navy) 78%, #011831);
 }
 [data-node-id="0:899"] > [data-node-id="0:901"] {
-  width: 62%;
+  left: -4%;
+  width: 60%;
   opacity: 1;
   mask-image: none;
   z-index: -2;
@@ -1307,10 +1308,12 @@ body { font-size: 16px; }
   z-index: -1;
   background:
     linear-gradient(to bottom, transparent 76%, var(--footer-seam) 100%),
-    linear-gradient(to right, transparent 40%, var(--contact-navy) 62%);
+    linear-gradient(to right, transparent 34%, var(--contact-navy) 45%);
 }
-[data-node-id="0:903"] { margin-left: 45.5%; gap: 34px; }
-[data-node-id="0:907"] { font-size: clamp(32px, 3.1vw, 60px); font-weight: 200; }
+[data-node-id="0:903"] { margin-left: 49%; gap: 34px; }
+[data-node-id="0:907"] { font-size: clamp(28px, 3.1vw, 60px); font-weight: 200; }
+[data-node-id="0:907"] p { line-height: 1.18; }
+[data-node-id="0:907"] p > span { display: block; line-height: inherit; white-space: nowrap; }
 [data-node-id="0:908"] { color: #c5d3e3; }
 [data-node-id="0:909"] {
   min-height: 48px;
@@ -1320,8 +1323,15 @@ body { font-size: 16px; }
 }
 [data-node-id="0:909"]:hover { border-color: var(--accent); background: #5db4c326; }
 @media (max-width: 700px) {
-  [data-node-id="0:899"] { align-items: end; padding-top: 250px; }
-  [data-node-id="0:899"] > [data-node-id="0:901"] { width: 100%; height: 70%; }
+  [data-node-id="0:899"] { align-items: end; padding-top: calc(clamp(280px, 76vw, 400px) + 32px); }
+  [data-node-id="0:899"] > [data-node-id="0:901"] {
+    left: -8%;
+    width: 108%;
+    height: clamp(280px, 76vw, 400px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent);
+    mask-image: linear-gradient(to bottom, #000 65%, transparent);
+  }
+  [data-node-id="0:907"] { font-size: clamp(26px, 6vw, 32px); }
   [data-node-id="0:899"]::before { background: linear-gradient(to bottom, transparent 48%, var(--contact-navy) 70%, var(--footer-seam) 100%); }
   [data-node-id="0:903"] { margin-left: 0; gap: 24px; }
 }
@@ -1658,7 +1668,7 @@ body { font-size: 16px; }
 .scroll-background [data-node-id="0:899"]::before {
   background:
     linear-gradient(to bottom, transparent 76%, var(--footer-seam) 100%),
-    linear-gradient(to right, transparent 40%, var(--scroll-background) 62%);
+    linear-gradient(to right, transparent 34%, var(--scroll-background) 45%);
 }
 @media (max-width: 700px) {
   .scroll-background [data-node-id="0:899"]::before {
